@@ -1,0 +1,25 @@
+circuit,data_qubits,qubits,depth,cx,size
+grover-rudolph loader,1,1,1,0,1
+pair circuit (controlled GR),1,4,29,19,38
+"pair circuit (QRAM, QROM query, 8 bits)",1,12,409,257,582
+"pair circuit (QRAM, bucket brigade, 8 bits)",1,22,1837,1549,3121
+grover-rudolph loader,2,2,4,2,5
+pair circuit (controlled GR),2,5,165,115,230
+"pair circuit (QRAM, QROM query, 8 bits)",2,13,1150,705,1580
+"pair circuit (QRAM, bucket brigade, 8 bits)",2,35,4225,4933,10007
+grover-rudolph loader,3,3,11,6,13
+pair circuit (controlled GR),3,6,424,295,586
+"pair circuit (QRAM, QROM query, 8 bits)",3,14,2298,1345,3007
+"pair circuit (QRAM, bucket brigade, 8 bits)",3,60,7361,11777,23933
+grover-rudolph loader,4,4,26,14,29
+pair circuit (controlled GR),4,7,971,667,1322
+"pair circuit (QRAM, QROM query, 8 bits)",4,15,6510,3741,8254
+grover-rudolph loader,5,5,57,30,61
+pair circuit (controlled GR),5,8,2094,1423,2818
+"pair circuit (QRAM, QROM query, 8 bits)",5,16,14179,8109,17801
+grover-rudolph loader,6,6,120,62,125
+pair circuit (controlled GR),6,9,4369,2947,5834
+grover-rudolph loader,7,7,247,126,253
+pair circuit (controlled GR),7,10,8948,6007,11890
+grover-rudolph loader,8,8,502,254,509
+pair circuit (controlled GR),8,11,18135,12139,24026

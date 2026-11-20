@@ -1,0 +1,16 @@
+\begin{tabular}{@{}lrrrrr@{}}
+\toprule
+Data qubits $n$ & 1 & 2 & 3 & 5 & 8 \\
+\midrule
+Amplitudes $k=2^n$ & 2 & 4 & 8 & 32 & 256 \\
+Qubits of the pair circuit & 4 & 5 & 6 & 8 & 11 \\
+CNOTs (before transpilation) & 19 & 115 & 295 & 1{,}423 & 12{,}139 \\
+Two-qubit gates on IBM Heron & 26 & 186 & 475 & -- & -- \\
+Depth on IBM Heron & 80 & 574 & 1{,}421 & -- & -- \\
+Shots for 95\% correct decisions & 11 & 29 & 44 & 173 & 386 \\
+\quad same, superposition protocol & 111 & 424 & 805 & 5{,}782 & 28{,}553 \\
+Accuracy GloVe-SIF, 1024 shots & 0.703 & 0.743 & 0.755 & 0.754 & 0.748 \\
+Accuracy SBERT, 1024 shots & 0.840 & 0.843 & 0.857 & 0.860 & 0.854 \\
+Accuracy SBERT, with Heron noise$^*$ & 0.840 & 0.835 & 0.825 & -- & -- \\
+\bottomrule
+\end{tabular}

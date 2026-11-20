@@ -1,0 +1,53 @@
+{
+  "name": "bert",
+  "embedders": [
+    {
+      "kind": "transformer",
+      "model_name": "data/models/bert-base-uncased",
+      "pooling": "mean"
+    },
+    {
+      "kind": "sbert",
+      "model_name": "data/models/all-mpnet-base-v2"
+    }
+  ],
+  "compressors": [
+    "pca",
+    "pca-fisher",
+    "fisher",
+    "random"
+  ],
+  "qubits": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+  ],
+  "protocols": [
+    {
+      "protocol": "pairs",
+      "n_pairs": 100
+    },
+    {
+      "protocol": "centroid"
+    },
+    {
+      "protocol": "superposition"
+    }
+  ],
+  "shots": [
+    1024,
+    null
+  ],
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ]
+}

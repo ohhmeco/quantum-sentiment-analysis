@@ -1,0 +1,58 @@
+{
+  "name": "main",
+  "data_dir": "data/sst2",
+  "cache_dir": "data/embeddings/cache",
+  "output_dir": "results",
+  "embedders": [
+    {
+      "kind": "glove-sif"
+    }
+  ],
+  "compressors": [
+    "pca",
+    "pca-fisher",
+    "fisher",
+    "random"
+  ],
+  "qubits": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+  ],
+  "protocols": [
+    {
+      "protocol": "pairs",
+      "n_pairs": 100
+    },
+    {
+      "protocol": "centroid"
+    },
+    {
+      "protocol": "superposition"
+    }
+  ],
+  "shots": [
+    1024,
+    null
+  ],
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "center": true,
+  "baselines": [
+    "logistic-regression",
+    "nearest-centroid",
+    "cosine-knn"
+  ],
+  "retention_sample": 1000,
+  "bootstrap": 1000
+}

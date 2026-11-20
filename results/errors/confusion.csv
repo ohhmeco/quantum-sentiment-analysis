@@ -1,0 +1,9 @@
+embedder,qubits,model,TN,FP,FN,TP
+glove-sif,1,logistic regression,604,308,224,685
+glove-sif,1,centroid pair,637,275,272,637
+glove-sif,1,"centroid pair, 1024 shots",640,272,270,639
+glove-sif,1,nearest centroid,637,275,272,637
+glove-sif,3,logistic regression,689,223,196,713
+glove-sif,3,centroid pair,707,205,237,672
+glove-sif,3,"centroid pair, 1024 shots",704,208,241,668
+glove-sif,3,nearest centroid,705,207,237,672

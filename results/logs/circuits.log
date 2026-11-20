@@ -1,0 +1,48 @@
+2026-11-19 16:07:05,277 resources n=1 done
+2026-11-19 16:07:05,546 resources n=2 done
+2026-11-19 16:07:06,008 resources n=3 done
+2026-11-19 16:07:06,343 resources n=4 done
+2026-11-19 16:07:07,180 resources n=5 done
+2026-11-19 16:07:07,334 resources n=6 done
+2026-11-19 16:07:07,619 resources n=7 done
+2026-11-19 16:07:08,105 resources n=8 done
+2026-11-19 16:07:08,516 embeddings read from cache data/embeddings/cache/sst2_glove-sif_5f396d0062.npz
+2026-11-19 16:07:14,049 validation grover-rudolph n=1: {'loader': 'grover-rudolph', 'qubits': 1, 'sentences': 100, 'pairs': 10, 'shots': 1024, 'circuits': 1000, 'aer_seconds': 5.1, 'mean_tvd': 0.014357045311164543, 'max_tvd': 0.048743723255449845, 'expected_tvd_shot_noise': 0.014495303532682406, 'pooled_chi2_pvalue': 0.20101779090219918, 'vote_agreement_with_exact': 0.991, 'label_agreement_with_exact': 1.0, 'aer_accuracy': 0.56, 'exact_accuracy': 0.56}
+2026-11-19 16:07:22,140 validation grover-rudolph n=2: {'loader': 'grover-rudolph', 'qubits': 2, 'sentences': 100, 'pairs': 10, 'shots': 1024, 'circuits': 1000, 'aer_seconds': 7.8, 'mean_tvd': 0.015864766498054298, 'max_tvd': 0.062048489731918136, 'expected_tvd_shot_noise': 0.015901992568184052, 'pooled_chi2_pvalue': 0.9161889118491064, 'vote_agreement_with_exact': 0.972, 'label_agreement_with_exact': 1.0, 'aer_accuracy': 0.62, 'exact_accuracy': 0.62}
+2026-11-19 16:07:35,138 validation grover-rudolph n=3: {'loader': 'grover-rudolph', 'qubits': 3, 'sentences': 100, 'pairs': 10, 'shots': 1024, 'circuits': 1000, 'aer_seconds': 12.7, 'mean_tvd': 0.01620118636405703, 'max_tvd': 0.054427317078166615, 'expected_tvd_shot_noise': 0.016458897466263528, 'pooled_chi2_pvalue': 0.6255598516802121, 'vote_agreement_with_exact': 0.946, 'label_agreement_with_exact': 0.87, 'aer_accuracy': 0.64, 'exact_accuracy': 0.57}
+2026-11-19 16:07:38,416 validation qram-qrom n=1: {'loader': 'qram-qrom', 'qubits': 1, 'sentences': 100, 'pairs': 5, 'shots': 1024, 'circuits': 500, 'aer_seconds': 2.6, 'mean_tvd': 0.014797129764429626, 'max_tvd': 0.04575874838538796, 'expected_tvd_shot_noise': 0.014583484324101755, 'pooled_chi2_pvalue': 0.8204180307865581, 'vote_agreement_with_exact': 0.986, 'label_agreement_with_exact': 0.98, 'aer_accuracy': 0.7, 'exact_accuracy': 0.7}
+2026-11-19 16:07:46,909 validation qram-qrom n=2: {'loader': 'qram-qrom', 'qubits': 2, 'sentences': 100, 'pairs': 5, 'shots': 1024, 'circuits': 500, 'aer_seconds': 8.1, 'mean_tvd': 0.015360226149118264, 'max_tvd': 0.047474724317153716, 'expected_tvd_shot_noise': 0.015809003510149227, 'pooled_chi2_pvalue': 0.8724134167769572, 'vote_agreement_with_exact': 0.978, 'label_agreement_with_exact': 0.95, 'aer_accuracy': 0.66, 'exact_accuracy': 0.69}
+                                 loader  qubits  sentences  pairs  shots  circuits  aer_seconds  mean_tvd   max_tvd  expected_tvd_shot_noise  pooled_chi2_pvalue  vote_agreement_with_exact  label_agreement_with_exact  aer_accuracy  exact_accuracy
+0                        grover-rudolph       1        100     10   1024      1000          5.1  0.014357  0.048744                 0.014495            0.201018                      0.991                        1.00          0.56            0.56
+1                        grover-rudolph       2        100     10   1024      1000          7.8  0.015865  0.062048                 0.015902            0.916189                      0.972                        1.00          0.62            0.62
+2                        grover-rudolph       3        100     10   1024      1000         12.7  0.016201  0.054427                 0.016459            0.625560                      0.946                        0.87          0.64            0.57
+3                             qram-qrom       1        100      5   1024       500          2.6  0.014797  0.045759                 0.014583            0.820418                      0.986                        0.98          0.70            0.70
+4                             qram-qrom       2        100      5   1024       500          8.1  0.015360  0.047475                 0.015809            0.872413                      0.978                        0.95          0.66            0.69
+5  qram-oracle (superposition, 64 refs)       1         25      0   1024        25          NaN  0.019019  0.033633                      NaN            0.747476                        NaN                         NaN           NaN             NaN
+6  qram-oracle (superposition, 64 refs)       2         25      0   1024        25          NaN  0.020100  0.042939                      NaN            0.432202                        NaN                         NaN           NaN             NaN
+7  qram-oracle (superposition, 64 refs)       3         25      0   1024        25          NaN  0.016821  0.034496                      NaN            0.836370                        NaN                         NaN           NaN             NaN
+                                        circuit  data_qubits  qubits  depth     cx   size
+0                         grover-rudolph loader            1       1      1      0      1
+1                  pair circuit (controlled GR)            1       4     29     19     38
+2       pair circuit (QRAM, QROM query, 8 bits)            1      12    409    257    582
+3   pair circuit (QRAM, bucket brigade, 8 bits)            1      22   1837   1549   3121
+4                         grover-rudolph loader            2       2      4      2      5
+5                  pair circuit (controlled GR)            2       5    165    115    230
+6       pair circuit (QRAM, QROM query, 8 bits)            2      13   1150    705   1580
+7   pair circuit (QRAM, bucket brigade, 8 bits)            2      35   4225   4933  10007
+8                         grover-rudolph loader            3       3     11      6     13
+9                  pair circuit (controlled GR)            3       6    424    295    586
+10      pair circuit (QRAM, QROM query, 8 bits)            3      14   2298   1345   3007
+11  pair circuit (QRAM, bucket brigade, 8 bits)            3      60   7361  11777  23933
+12                        grover-rudolph loader            4       4     26     14     29
+13                 pair circuit (controlled GR)            4       7    971    667   1322
+14      pair circuit (QRAM, QROM query, 8 bits)            4      15   6510   3741   8254
+15                        grover-rudolph loader            5       5     57     30     61
+16                 pair circuit (controlled GR)            5       8   2094   1423   2818
+17      pair circuit (QRAM, QROM query, 8 bits)            5      16  14179   8109  17801
+18                        grover-rudolph loader            6       6    120     62    125
+19                 pair circuit (controlled GR)            6       9   4369   2947   5834
+20                        grover-rudolph loader            7       7    247    126    253
+21                 pair circuit (controlled GR)            7      10   8948   6007  11890
+22                        grover-rudolph loader            8       8    502    254    509
+23                 pair circuit (controlled GR)            8      11  18135  12139  24026

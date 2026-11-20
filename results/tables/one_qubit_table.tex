@@ -1,0 +1,17 @@
+\begin{tabular}{@{}lcccccc@{}}
+\toprule
+ & \multicolumn{2}{c}{GloVe-SIF} & \multicolumn{2}{c}{BERT} & \multicolumn{2}{c}{SBERT} \\
+\cmidrule(lr){2-3}\cmidrule(lr){4-5}\cmidrule(lr){6-7}
+Model & PCA & +Fisher & PCA & +Fisher & PCA & +Fisher \\
+\midrule
+Logistic regression (probe) & 0.646 & 0.708 & 0.635 & 0.699 & 0.763 & 0.846 \\
+Nearest centroid & 0.661 & 0.700 & 0.639 & 0.710 & 0.758 & 0.842 \\
+Cosine 15-NN & 0.628 & 0.690 & 0.597 & 0.684 & 0.747 & 0.840 \\
+Centroid pair, exact & 0.664 & 0.700 & 0.636 & 0.710 & 0.760 & 0.841 \\
+Centroid pair, 1024 shots & 0.663 & 0.703 & 0.635 & 0.713 & 0.758 & 0.840 \\
+Pairs (100 circuits), 1024 shots & 0.652 & 0.698 & 0.629 & 0.706 & 0.746 & 0.841 \\
+Superposition, 1024 shots & 0.652 & 0.703 & 0.630 & 0.706 & 0.754 & 0.840 \\
+\midrule
+Full embedding, logistic regression & \multicolumn{2}{c}{0.785} & \multicolumn{2}{c}{0.856} & \multicolumn{2}{c}{0.887} \\
+\bottomrule
+\end{tabular}
