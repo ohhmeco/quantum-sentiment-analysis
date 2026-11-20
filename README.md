@@ -3,7 +3,7 @@
 Final project for the *Natural Language Processing* course, Università degli Studi di Milano, A.Y. 2025/26 — Michele Bonomi.
 
 **Custom project.** This is not one of the course's proposed projects: it follows my own project proposal,
-[`proposal.pdf`](proposal.pdf). See [From the proposal to the final project](#from-the-proposal-to-the-final-project)
+[`NLP_ProjectProposal_MicheleBonomi.pdf`](NLP_ProjectProposal_MicheleBonomi.pdf). See [From the proposal to the final project](#from-the-proposal-to-the-final-project)
 for what was kept and what changed.
 
 **Report: [`report.pdf`](report.pdf)**
@@ -45,7 +45,7 @@ SST-2 test set (1,821 sentences), five seeds, PCA + Fisher ranking.
 
 ## From the proposal to the final project
 
-The proposal ([`proposal.pdf`](proposal.pdf)) planned a hybrid pipeline: sentence embeddings compressed with PCA to
+The proposal ([`NLP_ProjectProposal_MicheleBonomi.pdf`](NLP_ProjectProposal_MicheleBonomi.pdf)) planned a hybrid pipeline: sentence embeddings compressed with PCA to
 16 or 32 dimensions (4–5 data qubits), amplitude encoding with a Grover–Rudolph state preparation, and an
 interference classifier comparing the input with positive and negative reference states, evaluated on SST-2 in
 simulation, with a critical discussion of the information lost in compression and of any scaling advantage.
@@ -68,7 +68,7 @@ i.e. on how far a single data qubit can go.
 
 ```
 report.pdf                   the report
-proposal.pdf                 the original project proposal (custom project)
+NLP_ProjectProposal_MicheleBonomi.pdf   the original project proposal (custom project)
 qsa/                         the Python package (all the logic)
   data.py                    SST-2 loading
   embeddings.py              GloVe-SIF, BERT (mean pooling), Sentence-BERT encoders + cache
