@@ -2,6 +2,10 @@
 
 Final project for the *Natural Language Processing* course, Università degli Studi di Milano, A.Y. 2025/26 — Michele Bonomi.
 
+**Custom project.** This is not one of the course's proposed projects: it follows my own project proposal,
+[`proposal.pdf`](proposal.pdf). See [From the proposal to the final project](#from-the-proposal-to-the-final-project)
+for what was kept and what changed.
+
 **Report: [`report.pdf`](report.pdf)**
 
 Sentence embeddings are compressed to 2ⁿ numbers, amplitude-encoded into n qubits and classified by the
@@ -39,10 +43,32 @@ SST-2 test set (1,821 sentences), five seeds, PCA + Fisher ranking.
 * **The single-qubit circuit is cheap.** 4 qubits and 19 CNOTs (26 two-qubit gates, depth 80 on an IBM Heron processor), about 11 shots for a 95%-reliable decision, no measurable loss under the `FakeTorino` noise model.
 * **More qubits buy little.** At most +2 points (Sentence-BERT) or +5 (GloVe) for ~47·2ⁿ CNOTs, more shots and more noise; with all training data in superposition the margin shrinks as k^(−0.56) and accuracy falls as qubits are added.
 
+## From the proposal to the final project
+
+The proposal ([`proposal.pdf`](proposal.pdf)) planned a hybrid pipeline: sentence embeddings compressed with PCA to
+16 or 32 dimensions (4–5 data qubits), amplitude encoding with a Grover–Rudolph state preparation, and an
+interference classifier comparing the input with positive and negative reference states, evaluated on SST-2 in
+simulation, with a critical discussion of the information lost in compression and of any scaling advantage.
+
+| Proposal | Final project |
+|---|---|
+| Pre-trained sentence embeddings | Three frozen encoders: GloVe-SIF, BERT (mean pooling), Sentence-BERT |
+| PCA to 16 or 32 dimensions (4–5 qubits) | Full sweep n = 1…8; focus moved to **one data qubit** (k = 2), the minimum |
+| PCA | PCA kept as the baseline; **Fisher ranking** of principal directions added, because variance is not relevance at k = 2 |
+| Grover–Rudolph state preparation, QRAM | Grover–Rudolph loader for the pair circuits; QRAM loaders for the superposition protocol and the resource study |
+| Interference classifier with positive/negative reference states | Schuld et al. circuit with three reference protocols: random pairs, all data in superposition, class centroids |
+| Accuracy, precision, retention on a simulator | Accuracy / P / R / F1, neighbourhood retention, linear probes, Qiskit Aer validation, gate and shot counts, IBM Heron noise model, error analysis |
+| Critical discussion: lost information, scaling advantage | Report, Sections 3–4: what one qubit keeps and loses, why quantum and classical rules coincide at one qubit, why no advantage appears once loading and measurement are counted |
+
+The main change is the research question. The sweep over n shows that 4–5 data qubits add at most a few points
+over one, at a much higher cost in gates, shots and noise; the project therefore focuses on minimising resources,
+i.e. on how far a single data qubit can go.
+
 ## Repository layout
 
 ```
 report.pdf                   the report
+proposal.pdf                 the original project proposal (custom project)
 qsa/                         the Python package (all the logic)
   data.py                    SST-2 loading
   embeddings.py              GloVe-SIF, BERT (mean pooling), Sentence-BERT encoders + cache
